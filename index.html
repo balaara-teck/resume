@@ -65,6 +65,111 @@
                 margin-top: 2rem;
                 font-size: 0.9rem;
             }
+
+            .certifications-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+                padding: 1rem;
+            }
+
+            .cert-card {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 15px;
+                padding: 1rem;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            }
+
+            .cert-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 45px rgba(31, 38, 135, 0.3);
+            }
+
+            .cert-image {
+                position: relative;
+                width: 100%;
+                height: 200px;
+                border-radius: 10px;
+                overflow: hidden;
+                margin-bottom: 1rem;
+            }
+
+            .cert-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            .cert-card:hover .cert-image img {
+                transform: scale(1.1);
+            }
+
+            .cert-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    135deg,
+                    rgba(0, 247, 255, 0.5) 0%,
+                    rgba(0, 247, 255, 0.2) 100%
+                );
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            .cert-image:hover .cert-overlay {
+                opacity: 1;
+            }
+
+            .view-cert {
+                color: white;
+                text-decoration: none;
+                padding: 0.8rem 1.5rem;
+                background: rgba(0, 0, 0, 0.5);
+                border-radius: 25px;
+                font-weight: 500;
+                transform: translateY(20px);
+                transition: all 0.3s ease;
+            }
+
+            .cert-image:hover .view-cert {
+                transform: translateY(0);
+            }
+
+            .cert-info {
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .cert-info h3 {
+                color: #00f7ff;
+                margin: 0;
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                text-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+            }
+
+            .cert-info p {
+                color: rgba(255, 255, 255, 0.7);
+                margin: 0;
+                font-size: 0.9rem;
+            }
+
+            @media (max-width: 768px) {
+                .certifications-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
         </style>
     </head>
 
@@ -105,7 +210,8 @@
                 <p>
                     Passionate junior Django developer with a strong belief in
                     programming as a solution-driven field for addressing modern
-                    challenges. While pursuing professional training as a
+                    challenges.<br/>
+                While pursuing professional training as a
                     teacher, I have embraced computer programming as a universal
                     skill essential for every profession in today’s automated
                     world.
@@ -231,7 +337,46 @@
             <!-- Certifications Section -->
             <section>
                 <h2 class="section-title">Certifications</h2>
-                <p>Details of certifications can be added here.</p>
+                <div class="certifications-grid">
+                    <div class="cert-card">
+                        <div class="cert-image">
+                            <img src="scientific computing with python.png" alt="Python Certificate">
+                            <div class="cert-overlay">
+                                <a href="https://www.freecodecamp.org/certification/balaara-teck/scientific-computing-with-python-v7" class="view-cert">View Certificate</a>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <h3>Scientic Computing With Python-freeCodeCamp</h3>
+                            
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image">
+                            <img src="python workshop.png" alt="Web Development Certificate">
+                            <div class="cert-overlay">
+                                <a href="https://courses.baobabplatform.org/certificates/61aace9e09a94ac7ab0df630f0b0e479" class="view-cert">View Certificate</a>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <h3>Introduction to python programming-Baobao,Arizona Sttate University</h3>
+                            
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image">
+                            <img src="WEI_48341.jpg" alt="Advanced English">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert">View Certificate</a>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <h3>Advanced English-World English Institute</h3>
+                            
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
 
